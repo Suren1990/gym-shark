@@ -1,0 +1,88 @@
+button {
+  border: 1px solid #000;
+}
+
+.App {
+  margin: 40px;
+  text-align: center;
+}
+
+.wrap {
+  position: relative;
+  display: flex;
+  max-width: 390px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  border: 1px solid;
+
+  &__inner {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 3.3px;
+    padding: 20px 0;
+    transition: transform 500ms;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.item {
+  width: 80px;
+  height: 132px;
+
+  &__inner {
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 60px;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    // transition: transform 500ms;
+  }
+
+  &.sub_active {
+    width: 91px;
+    height: 150px;
+
+    // .item__inner {
+    //   transform: scale(1.1375);
+    // }
+  }
+
+  &.active {
+    width: 104px;
+    height: 171px;
+
+    // .item__inner {
+    //   transform: scale(1.3);
+    // }
+  }
+}
+
+.mark {
+  position: absolute;
+  top: 12px;
+  left: calc(50% - 11px);
+  display: block;
+  width: 22px;
+  height: 34px;
+  transform: rotate(24deg);
+
+  &.anim {
+    animation: anim 240ms linear 1 alternate forwards;
+  }
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(24deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
