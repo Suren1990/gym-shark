@@ -7,9 +7,15 @@ function App() {
   const [translate, setTranslate] = useState(0);
   const [anim, setAnim] = useState(false);
 
-  const length = elements.length;
-
   const [active, setActive] = useState(3);
+
+  let longElementsArr = [];
+
+  for (let i = 0; i < 4; i++) {
+    longElementsArr.push(...elements);
+  }
+
+  const length = longElementsArr.length;
 
   useEffect(() => {
     if (active === 2) {
@@ -65,12 +71,12 @@ function App() {
 
         <div className='wrap__inner' style={{ 'transform': `translateX(${translate}px)` }}>
           {
-            elements.map((item, index) => (
+            longElementsArr.map((item, index) => (
               <div className={
                 `item 
                 ${activeSub(active, index)}
                 `}
-                key={item}
+                key={index}
               >
                 <div className="item__inner">
 
