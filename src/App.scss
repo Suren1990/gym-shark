@@ -24,7 +24,7 @@ button {
     align-items: flex-end;
     column-gap: 3.3px;
     padding: 20px 0;
-    transition: transform 500ms;
+    transition: transform 1000ms;
   }
 
   &::-webkit-scrollbar {
@@ -35,6 +35,8 @@ button {
 .item {
   width: 80px;
   height: 132px;
+  transform: scale(1);
+  transition: transform 500ms;
 
   &__inner {
     height: 100%;
@@ -46,8 +48,9 @@ button {
   }
 
   &.sub_active {
-    width: 91px;
-    height: 150px;
+    // width: 91px;
+    // height: 150px;
+    transform: scale(1.1);
 
     // .item__inner {
     //   transform: scale(1.1375);
@@ -55,8 +58,9 @@ button {
   }
 
   &.active {
-    width: 104px;
-    height: 171px;
+    // width: 104px;
+    // height: 171px;
+    transform: scale(1.2);
 
     // .item__inner {
     //   transform: scale(1.3);
