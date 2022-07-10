@@ -6,7 +6,7 @@ function App() {
   const elements = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   const [translate, setTranslate] = useState(0);
   const [anim, setAnim] = useState(false);
-
+  const [intervalId, setIntervalId] = useState(0);
   const [active, setActive] = useState(3);
 
   let longElementsArr = [];
@@ -42,25 +42,28 @@ function App() {
 
   const translateHandleNext = () => {
     if (active < length - 1) {
-      setActive(active + 1);
+      setActive(active => active + 1);
     }
     if (active > 1 && active < length - 1) {
-      setTranslate(translate - 83)
+      setTranslate(translate => translate - 83)
     } else if (active === 0) {
       setTranslate(40);
     }
+    console.log("translateHandleNext called")
+    console.log("active item", active)
   }
 
-  const translateHandlePrev = () => {
-    if (active > 0) {
-      setActive(active - 1);
-    }
-    if (active > 1 && active < length) {
-      setTranslate(translate + 83)
-    } else if (active === 1) {
-      setTranslate(124);
-    }
-  }
+  const handleClick = () => {
+    let counter = 0
+    const intervalId = setInterval(() => {
+      console.log("counter: ", counter)
+      translateHandleNext()
+      counter++
+      if(counter === 20) {
+          clearInterval(intervalId);
+      }
+    }, 150);
+  };
 
   return (
     <div className="App">
@@ -87,11 +90,10 @@ function App() {
         </div>
       </div>
       <button
-        onClick={translateHandlePrev}
-      >Prev</button>
-      <button
-        onClick={translateHandleNext}
-      >Next</button>
+        onClick={handleClick}
+      >Start Animation</button>
+      <br/>
+      <span>translate: {translate} - anime: {anim} - active: {active} - intervalId: {intervalId}</span>
     </div>
   );
 }
