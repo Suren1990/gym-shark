@@ -26,7 +26,7 @@ function App() {
     setAnim(true);
     setTimeout(() => {
       setAnim(false);
-    }, 250)
+    }, 240)
 
   }, [active]);
 
@@ -62,7 +62,7 @@ function App() {
       if(counter === 20) {
           clearInterval(intervalId);
       }
-    }, 150);
+    }, 250);
   };
 
   return (
