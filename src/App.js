@@ -21,7 +21,7 @@ function App() {
     if (active === 2) {
       setTranslate(-54);
     } else if (active > 2) {
-      setTranslate(-54 - (-(active - 2) * -83))
+      setTranslate(-54 - (-(active - 2) * -95))
     }
     setAnim(true);
     setTimeout(() => {
@@ -45,7 +45,7 @@ function App() {
       setActive(active => active + 1);
     }
     if (active > 1 && active < length - 1) {
-      setTranslate(translate => translate - 83)
+      setTranslate(translate => translate - 95)
     } else if (active === 0) {
       setTranslate(40);
     }
@@ -62,7 +62,7 @@ function App() {
       if(counter === 20) {
           clearInterval(intervalId);
       }
-    }, 250);
+    }, 300);
   };
 
   return (

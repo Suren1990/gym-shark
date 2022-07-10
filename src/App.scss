@@ -22,9 +22,9 @@ button {
   &__inner {
     display: flex;
     align-items: flex-end;
-    column-gap: 3.3px;
+    column-gap: 15px;
     padding: 20px 0;
-    transition: transform 800ms;
+    transition: transform 700ms;
   }
 
   &::-webkit-scrollbar {
@@ -70,7 +70,7 @@ button {
 
 .mark {
   position: absolute;
-  top: 12px;
+  top: 4px;
   left: calc(50% - 11px);
   display: block;
   width: 22px;
